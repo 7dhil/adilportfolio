@@ -642,12 +642,30 @@ margin-bottom: -60px;
 
 /* ================= CONTACT ================= */
 
+/* ================= CONTACT FULL WIDTH BG ================= */
+
 .contact{
-min-height:100vh;
+position:relative;
+
+/* FULL WIDTH BREAKOUT */
+width:100vw;
+left:50%;
+transform:translateX(-50%);
+
+padding:120px 0;
+
+overflow:hidden;
+}
+
+/* KEEP CONTENT CENTERED */
+
+.contact-container{
+max-width:1200px;
+margin:0 auto;
+
 display:flex;
+flex-direction:column;
 align-items:center;
-justify-content:center;
-padding:120px 80px;
 }
 
 /* WRAPPER */
@@ -779,15 +797,7 @@ box-shadow:0 0 30px rgba(37,211,102,0.5);
 box-shadow:0 0 30px rgba(225,48,108,0.5);
 }
 
-#contact-bg{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:0;
-pointer-events:none;
-}
+
 
 .contact{
 position:relative;
@@ -1448,4 +1458,197 @@ border-radius:10px;
 
 ::-webkit-scrollbar-thumb:hover{
 background:#ddd;
+}
+
+/* ================= SPACE BACKGROUND ================= */
+
+.tech{
+position:relative;
+overflow:hidden;
+}
+
+/* STAR LAYER */
+
+.space-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:0;
+
+/* multiple stars */
+background:
+radial-gradient(2px 2px at 20% 30%, white, transparent),
+radial-gradient(1px 1px at 70% 80%, white, transparent),
+radial-gradient(2px 2px at 40% 60%, white, transparent),
+radial-gradient(1px 1px at 90% 20%, white, transparent),
+radial-gradient(2px 2px at 10% 90%, white, transparent);
+
+animation:starsMove 20s linear infinite;
+opacity:0.6;
+}
+
+/* KEEP CONTENT ABOVE */
+
+.tech > *:not(.space-bg){
+position:relative;
+z-index:2;
+}
+
+/* ANIMATION */
+
+@keyframes starsMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-200px);
+}
+}
+
+/* TWINKLE */
+
+.space-bg::after{
+content:"";
+
+position:absolute;
+width:100%;
+height:100%;
+
+background:
+radial-gradient(2px 2px at 30% 40%, white, transparent),
+radial-gradient(1px 1px at 60% 70%, white, transparent);
+
+animation:twinkle 2s infinite alternate;
+opacity:0.5;
+}
+
+@keyframes twinkle{
+from{opacity:0.2;}
+to{opacity:0.8;}
+}
+
+/* FLOATING PARTICLES */
+
+.space-bg::before{
+content:"";
+
+position:absolute;
+width:200%;
+height:200%;
+
+background:
+radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+
+background-size:50px 50px;
+
+animation:drift 30s linear infinite;
+}
+
+@keyframes drift{
+from{transform:translate(0,0);}
+to{transform:translate(-200px,-200px);}
+}
+
+/* ================= TECH FULL WIDTH BG FIX ================= */
+
+.tech{
+position:relative;
+
+/* FULL WIDTH BACKGROUND */
+width:100vw;
+left:50%;
+transform:translateX(-50%);
+
+/* spacing */
+padding:120px 0;
+
+overflow:hidden;
+}
+
+.space-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:0;
+}
+
+/* ================= SHOOTING STARS ================= */
+
+.shooting-star{
+position:absolute;
+
+width:2px;
+height:80px;
+
+background:linear-gradient(-45deg, white, transparent);
+
+opacity:0.8;
+
+transform:rotate(45deg);
+
+animation:shoot 4s linear infinite;
+}
+
+/* DIFFERENT POSITIONS + TIMINGS */
+
+.shooting-star:nth-child(1){
+top:10%;
+left:20%;
+animation-delay:0s;
+}
+
+.shooting-star:nth-child(2){
+top:30%;
+left:70%;
+animation-delay:1s;
+}
+
+.shooting-star:nth-child(3){
+top:60%;
+left:40%;
+animation-delay:2s;
+}
+
+.shooting-star:nth-child(4){
+top:20%;
+left:80%;
+animation-delay:3s;
+}
+
+.shooting-star:nth-child(5){
+top:80%;
+left:10%;
+animation-delay:1.5s;
+}
+
+/* ANIMATION */
+
+@keyframes shoot{
+
+0%{
+transform:translate(0,0) rotate(45deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translate(300px, 300px) rotate(45deg);
+opacity:0;
+}
+
+}
+
+.shooting-star{
+box-shadow:0 0 10px white, 0 0 20px white;
+}
+
+.shooting-star:nth-child(2){
+height:120px;
 }

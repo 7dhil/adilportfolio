@@ -8,7 +8,7 @@
 <title>Mohamed Adil Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="images/p watermark black.png">
+<link rel="icon" type="image/png" href="images/Favicon-removebg-preview.png">
 
 </head>
 
@@ -221,7 +221,7 @@ data-desc="Flappy Copter is a 2D game I developed in Unity, inspired by the mech
 
 <div class="project-card active"
 data-title='A Journey <span class="project-style">Home</span>'
-data-desc="Flappy Copter is a 2D game I developed in Unity, inspired by the mechanics of Flappy Bird. While the gameplay follows a similar concept, I redesigned the environment with different buildings, background animations, and visual elements to create a distinct experience. The project required significant time and effort during development and helped me understand the fundamentals of game mechanics, level design, and Unity development.">
+data-desc="A Journey Home is a mini game I developed using Bitsy as part of my first-year Game Development assessment. The project features a 5-level experience centered around a character navigating challenges to return home. The game focuses on simple storytelling and emotional themes, inspired by ideas of journey, purpose, and belonging, creating a meaningful experience within a minimal design framework.">
 <img src="images/bitsyyy.png">
 
 <div class="project-links">
@@ -290,6 +290,19 @@ data-desc="MoodCast is an Android application I developed using Kotlin in Androi
 
 <section class="tech">
 
+<div class="space-bg">
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+</div>
+
+
 <h1 class="tech-title">
 Tech <span class="tech-style">Stack</span>
 </h1>
@@ -322,11 +335,23 @@ Tech <span class="tech-style">Stack</span>
 
 <section class="contact">
 
-<canvas id="contact-bg"></canvas>
+<div class="space-bg">
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+</div>
 
 <div class="contact-wrapper">
 
 <!-- LEFT SIDE -->
+
+
 
 <div class="contact-left">
 
@@ -336,7 +361,7 @@ Contact <br>
 </h1>
 
 <p class="contact-desc">
-Let’s connect and build something meaningful together.
+ʟᴇᴛ’ꜱ ᴄᴏɴɴᴇᴄᴛ ᴀɴᴅ ʙᴜɪʟᴅ ꜱᴏᴍᴇᴛʜɪɴɢ ᴍᴇᴀɴɪɴɢꜰᴜʟ ᴛᴏɢᴇᴛʜᴇʀ.
 </p>
 
 </div>
@@ -394,7 +419,7 @@ Let’s connect and build something meaningful together.
 
 <div class="footer-left">
 <h2>Mohamed Adil</h2>
-<p>Creative Developer • Designer • Problem Solver</p>
+<p>ᴄʀᴇᴀᴛɪᴠᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀ • ᴜɪ/ᴜx ᴅᴇꜱɪɢɴᴇʀ • ꜰʀᴏɴᴛᴇɴᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ</p>
 </div>
 
 <!-- RIGHT -->
@@ -412,7 +437,7 @@ Let’s connect and build something meaningful together.
 <!-- BOTTOM -->
 
 <div class="footer-bottom">
-<p>© 2026 Mohamed Adil. All rights reserved.</p>
+<p>© 𝟤𝟢𝟤𝟨 ᴍᴏʜᴀᴍᴇᴅ ᴀᴅɪʟ. ᴀʟʟ ʀɪɢʜᴛꜱ ʀᴇꜱᴇʀᴠᴇᴅ.</p>
 </div>
 
 </footer>
@@ -818,44 +843,7 @@ renderer.render(scene, camera);
 
 animate();
 
-const canvas = document.getElementById("contact-bg");
-const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-particles.push({
-x: Math.random()*canvas.width,
-y: Math.random()*canvas.height,
-size: Math.random()*2,
-speedX:(Math.random()-0.5)*0.5,
-speedY:(Math.random()-0.5)*0.5
-});
-}
-
-function animateParticles(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach(p=>{
-p.x += p.speedX;
-p.y += p.speedY;
-
-if(p.x<0 || p.x>canvas.width) p.speedX *= -1;
-if(p.y<0 || p.y>canvas.height) p.speedY *= -1;
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fillStyle="rgba(255,255,255,0.5)";
-ctx.fill();
-});
-
-requestAnimationFrame(animateParticles);
-}
-
-animateParticles();
 
 
 
