@@ -642,31 +642,14 @@ margin-bottom: -60px;
 
 /* ================= CONTACT ================= */
 
-/* ================= CONTACT FULL WIDTH BG ================= */
-
 .contact{
-position:relative;
-
-/* FULL WIDTH BREAKOUT */
-width:100vw;
-left:50%;
-transform:translateX(-50%);
-
-padding:120px 0;
-
-overflow:hidden;
-}
-
-/* KEEP CONTENT CENTERED */
-
-.contact-container{
-max-width:1200px;
-margin:0 auto;
-
+min-height:100vh;
 display:flex;
-flex-direction:column;
 align-items:center;
+justify-content:center;
+padding:120px 80px;
 }
+
 
 /* WRAPPER */
 
@@ -689,6 +672,7 @@ flex:1;
 font-size:90px;
 font-family:herofont;
 line-height:1;
+margin-left: 100px;
 }
 
 .contact-style{
@@ -700,6 +684,7 @@ color:gold;
 margin-top:20px;
 color:#aaa;
 max-width:300px;
+margin-left: 100px;
 }
 
 /* RIGHT */
@@ -814,8 +799,8 @@ width:140%;
 height:140%;
 
 background:
-radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 60%),
-radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 60%);
+radial-gradient(circle at 30% 30%, rgba(0, 0, 0, 0.08), transparent 60%),
+radial-gradient(circle at 70% 70%, rgba(0, 0, 0, 0.05), transparent 60%);
 
 filter:blur(80px);
 z-index:0;
@@ -1652,3 +1637,46 @@ box-shadow:0 0 10px white, 0 0 20px white;
 .shooting-star:nth-child(2){
 height:120px;
 }
+
+/* ================= CONTACT FULL WIDTH BG FIX ================= */
+
+.contact{
+position:relative;
+
+/* BREAK OUT OF CENTER CONTAINER */
+width:100vw;
+left:50%;
+transform:translateX(-50%);
+
+padding:120px 0;
+
+overflow:hidden;
+}
+
+/* SPACE BG FULL COVER */
+
+.contact .space-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:0;
+}
+
+/* KEEP CONTENT ABOVE BG */
+
+.contact-wrapper{
+position:relative;
+z-index:2;
+
+/* CENTER CONTENT */
+max-width:1200px;
+margin:0 auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:80px;
+}
+
