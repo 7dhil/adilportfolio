@@ -25,7 +25,7 @@
 
 <div class="portfolio">PORTFOLIO</div>
 
-<button class="resume-btn">RESUME</button>
+
 
 </nav>
 
@@ -373,7 +373,7 @@ Let’s connect and build something meaningful together.
 <span>Instagram</span>
 </a>
 
-<a href="files/resume.pdf" download class="contact-card">
+<a href="images/ADIL Main CV.pdf" download class="contact-card">
 <img src="images/cv.png" class="contact-icon">
 <span>My Resume</span>
 </a>
@@ -493,7 +493,7 @@ start:"top 70%"
 
 const aboutSection = document.getElementById("about");
 const portfolioText = document.querySelector(".portfolio");
-const resumeBtn = document.querySelector(".resume-btn");
+
 
 window.addEventListener("scroll", () => {
 
@@ -502,10 +502,10 @@ const scrollPos = window.scrollY;
 
 if(scrollPos >= aboutTop - 100){
 portfolioText.classList.add("hidden");
-resumeBtn.classList.add("hidden");
+
 }else{
 portfolioText.classList.remove("hidden");
-resumeBtn.classList.remove("hidden");
+
 }
 
 });
